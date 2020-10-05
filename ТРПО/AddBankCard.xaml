@@ -1,0 +1,69 @@
+﻿<Window x:Class="CEP.AddBankCard"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CEP"
+        mc:Ignorable="d"
+        Title="UnrealWindow" Height="359.9" Width="859.2" x:Name="MyWindow"
+        WindowStartupLocation="CenterScreen"
+        AllowsTransparency="True" Background="Transparent" WindowStyle="None" ResizeMode="NoResize">
+    <Grid>
+        <Border Width="auto" Height="auto" BorderBrush="Black" BorderThickness="2"
+                CornerRadius="30,30,30,30" MouseLeftButtonDown="Border_MouseLeftButtonDown" Margin="0,0,10.2,-0.4" >
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFA7F596" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" MinHeight="67.2"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <TextBlock Padding="5" FontWeight="Bold" FontSize="48" Margin="113,11,117,10" FontFamily="Gabriola" Height="68" Width="615" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center" Foreground="Black" Text="𝄖𝄖𝄖Добавление карты𝄖𝄖𝄖"></TextBlock>
+                <Grid Margin="0,9.6,-0.2,0.2" Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Button Background="#FFFBCCFF" FontWeight="Bold" HorizontalAlignment="Left" Margin="78,169,0,0" VerticalAlignment="Top" Width="220" Height="60" FontSize="40" FontFamily="Gabriola" Click="BackToMenu" Cursor="Hand" BorderBrush="Black">
+                        <StackPanel Orientation="Horizontal" Width="215">
+                            <Image Source="/NewImageFolder/BackButton.png" Width="42" Height="56"/>
+                            <TextBlock Text="Вернуться" Width="158"/>
+                        </StackPanel>
+                    </Button>
+                    <Button x:Name="addButton" FontWeight="Bold" FontSize="40" FontFamily="Gabriola" VerticalAlignment="Center" Background="#FFFBCCFF" Margin="543,169,82,28.2" Click="AddButton_Click" Height="60" BorderBrush="Black" Cursor="Hand">
+                        <StackPanel Orientation="Horizontal" Width="215">
+                            <Image Source="/NewImageFolder/Plus.png" Width="56" Height="56"/>
+                            <TextBlock Text="Добавить" Width="158"/>
+                        </StackPanel>
+                    </Button>
+                    <TextBox x:Name="cardNumber" HorizontalAlignment="Left" FontFamily="Comic Sans MS" FontSize="20" Height="39" Margin="38,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="225" BorderBrush="Black"/>
+                    <TextBox x:Name="userName" FontFamily="Comic Sans MS" FontSize="20" HorizontalAlignment="Left" Height="39" Margin="298,25,0,0" VerticalAlignment="Top" Width="220" BorderBrush="Black"/>
+                    <TextBox x:Name="userSurname" FontFamily="Comic Sans MS" FontSize="20" HorizontalAlignment="Left" Height="39" Margin="553,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250" BorderBrush="Black"/>
+                    <TextBox x:Name="CVVCode" FontFamily="Comic Sans MS" FontSize="20" HorizontalAlignment="Left" Height="39" Margin="137,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178" BorderBrush="Black"/>
+                    <TextBox x:Name="cardExpiration" FontFamily="Comic Sans MS" FontSize="20" HorizontalAlignment="Left" Height="39" Margin="528,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178" BorderBrush="Black"/>
+                    <Label FontWeight="Bold" FontFamily="Gabriola" Foreground="Black" FontSize="20" Content="Введите номер карты" HorizontalAlignment="Left" Margin="39,-7,0,0" VerticalAlignment="Top" Width="222"/>
+                    <Label FontWeight="Bold" FontFamily="Gabriola" Foreground="Black" FontSize="20" Content="Введите имя владельца карты" HorizontalAlignment="Left" Margin="298,-11,0,0" VerticalAlignment="Top" Height="36"/>
+                    <Label FontWeight="Bold" FontFamily="Gabriola" Foreground="Black" FontSize="20" Content="Введите фамилию владельца карты" HorizontalAlignment="Left" Margin="553,-11,0,0" VerticalAlignment="Top" Height="36"/>
+                    <Label FontWeight="Bold" FontFamily="Gabriola" Foreground="Black" FontSize="20" Content="Введите CVV-код" HorizontalAlignment="Left" Margin="137,69,0,0" VerticalAlignment="Top" Height="37"/>
+                    <Label FontWeight="Bold" FontFamily="Gabriola" Foreground="Black" FontSize="20" Content="Введите срок действия" HorizontalAlignment="Left" Margin="528,71,0,0" VerticalAlignment="Top" Height="35"/>
+                </Grid>
+                <Button x:Name="Close"  FontWeight="Bold" Content="❌" Foreground="Red" FontSize="20" Background="Transparent" Margin="801,8,12,50" BorderBrush="{x:Null}" Click="Close_Click" IsCancel="True" AutomationProperties.Name="Close" Cursor="Hand" RenderTransformOrigin="0.504,0.5"  >
+                    <Button.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="-1"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Button.RenderTransform>
+                </Button>
+                <Image Source="NewImageFolder\AddCard.png" HorizontalAlignment="Left" Height="175" Margin="333,82,0,0" VerticalAlignment="Top" Width="195" Grid.Row="1"/>
+            </Grid>
+        </Border>
+        <Button x:Name="Info" Margin="777,295,10,0" Style="{StaticResource info2}" Click="Info_Click" Cursor="Hand"></Button>
+    </Grid>
+</Window>

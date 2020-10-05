@@ -1,0 +1,50 @@
+﻿<Window x:Class="CEP.RegisterWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CEP"
+        mc:Ignorable="d"
+        Title="UnrealWindow" Height="485" Width="439.988" x:Name="MyWindow"
+        WindowStartupLocation="CenterScreen"
+        AllowsTransparency="True" Background="Transparent" WindowStyle="None" ResizeMode="NoResize">
+    <Grid>
+        <Border Width="auto" Height="auto" BorderBrush="Black" BorderThickness="2"
+                CornerRadius="30,30,30,30" MouseLeftButtonDown="Border_MouseLeftButtonDown">
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFA7F596" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="481"/>
+                    <RowDefinition Height="auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Image Source="/NewImageFolder/Registration.png" Margin="247,173,10,158" />
+                <TextBlock FontWeight="Bold" Padding="5" FontSize="48" Margin="31,10,31,401" FontFamily="Gabriola" Height="70" Width="374" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center" Foreground="Black" RenderTransformOrigin="0.504,0.333"><Run Text="𝄖Регистрация𝄖"/></TextBlock>
+                <Button x:Name="Close" FontWeight="Bold" Content="❌" Foreground="Red" FontSize="20" Background="Transparent" Margin="391,8,13,442" BorderBrush="{x:Null}" Click="Close_Click" IsCancel="True" AutomationProperties.Name="Close" Cursor="Hand" RenderTransformOrigin="0.5,0.5"  >
+                    <Button.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="-1"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Button.RenderTransform>
+                </Button>
+                <TextBox x:Name="loginField" HorizontalAlignment="Left" Height="35" FontFamily="Comic Sans MS" FontSize="20" Margin="28,267,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="214" BorderBrush="Black"/>
+                <TextBox x:Name="nameField" HorizontalAlignment="Left" Height="37" FontFamily="Comic Sans MS" FontSize="20" Margin="28,117,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="214" BorderBrush="Black"/>
+                <TextBox x:Name="surnamField" HorizontalAlignment="Left" Height="35" Margin="28,193,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="214" FontFamily="Comic Sans MS" FontSize="20" BorderBrush="Black"/>
+                <PasswordBox x:Name="passwordField" HorizontalAlignment="Left" Margin="28,341,0,0" VerticalAlignment="Top" Width="214" Height="35" FontFamily="Comic Sans MS" FontSize="20" BorderBrush="Black"/>
+                <Label Content="Введите логин" FontWeight="Bold" Foreground="Black" Margin="28,228,0,0" Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Top" Width="128" Height="39" FontSize="24" FontFamily="Gabriola"/>
+                <Label Content="Введите пароль" FontWeight="Bold" Foreground="Black" Margin="28,301,0,0" Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Top" Width="140" Height="41" FontSize="24" FontFamily="Gabriola"/>
+                <Label Content="Введите имя" FontWeight="Bold" Foreground="Black" Margin="28,78,0,0" Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Top" Width="186" Height="39" FontSize="24" FontFamily="Gabriola"/>
+                <Label Content="Введите фамилию" FontWeight="Bold" Foreground="Black" Margin="28,154,0,0" Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Top" Width="168" Height="39" FontSize="24" FontFamily="Gabriola"/>
+                <Button Content="Зарегистрироваться" FontWeight="Bold" Background="#FFFBCCFF" HorizontalAlignment="Left" Margin="88,408,0,0" VerticalAlignment="Top" Width="260" Height="55" FontSize="33" FontFamily="Gabriola" Click="Registration_Click" Cursor="Hand" BorderBrush="Black"/>
+            </Grid>
+        </Border>
+        <Button x:Name="Info" Margin="370,415,5,0" Style="{StaticResource info2}" Click="Info_Click" Cursor="Hand"></Button>
+    </Grid>
+</Window>
